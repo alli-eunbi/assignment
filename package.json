@@ -20,6 +20,6 @@
   "scripts": {
     "start": "npm run build:live",
     "build": "tsc -p .",
-    "build:live": "nodemon --watch './*.ts' --exec 'ts-node' ./app.ts"
+    "build:live": "nodemon --watch './main.ts' --exec 'ts-node' ./app.ts"
   }
 }
