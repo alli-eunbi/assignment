@@ -27,6 +27,6 @@ export class Resource {
   @OneToMany((type) => Link, (link) => link.document_id)
   link: Link[];
 
-  @OneToMany((type) => Link, (link) => link.content_id)
-  content: Link[];
+  // @OneToMany((type) => Link, (link) => link.content_id)
+  // content: Link[];
 }

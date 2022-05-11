@@ -1,13 +1,13 @@
 import { DataSource } from "typeorm";
-
-const AppDataSource = new DataSource({
+const dbConnection = new DataSource({
   type: "mysql",
-  host: "localhost",
+  host: "mysql",
   port: 3306,
   username: "root",
   password: "1234",
   database: "lecture",
   charset: "utf8mb4",
+  synchronize: true,
 });
 
-export default AppDataSource;
+export default dbConnection;

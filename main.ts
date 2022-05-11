@@ -1,15 +1,18 @@
-import AppDataSource from "./config/config";
-// import { User } from "../entity/User"
 import express from "express";
-
+import dbConnection from "./config/config";
+import cors from "cors";
+import bodyParser from "body-parser";
+import resources from "./resources";
 const app = express();
 const port = 3000;
-import resources from "./resources";
+
+app.use(cors());
+app.use(bodyParser.json());
 
 app.use("/", resources);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("hello");
 });
 
 app.listen(port, () => {
