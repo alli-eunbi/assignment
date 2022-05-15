@@ -8,23 +8,19 @@ services:
       - 3000:3000
     volumes:
       - ./:/app
-    environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: 1234
-      MYSQL_DB: lecture
 
   mysql:
     image: mysql:5.7
-    build: ./mysql/
+    build: ./mysql
     ports:
       - "3306:3306"
     volumes:
-      - "./.mysql-data/db:/var/lib/mysql"
-    restart: always
+      - ./mysql/:/docker-entrypoint-initdb.d/
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_DATABASE: lecture
     command:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_unicode_ci
+    platform: linux/x86_64

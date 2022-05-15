@@ -1,14 +1,17 @@
+drop database if exists lecture;
+create database lecture;
+use lecture;
 CREATE TABLE `Resource` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `type` varchar(255),
-  `name` varchar(255),
+  `type` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `metadata_id` int
 );
 
 CREATE TABLE `Link` (
   `id` int PRIMARY KEY,
-  `document_id` int,
-  `content_id` int
+  `document_id` int  NOT NULL,
+  `content_id` int  NOT NULL
 );
 
 CREATE TABLE `Metadata` (
