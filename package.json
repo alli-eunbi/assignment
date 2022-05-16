@@ -1,0 +1,31 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/business-canvas/assignment.git",
+  "author": "Alli_Eunbi <allieunbi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/cors": "^2.8.12",
+    "Express": "^3.0.1",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.6"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.31",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch './main.ts' --exec 'ts-node' ./main.ts",
+    "dev": "nodemon --watch \"./*.ts\" --exec \"ts-node\" ./main.ts"
+  }
+}
