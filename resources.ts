@@ -1,5 +1,6 @@
-import { Resource } from "./entities/Resource.entity";
-import dbConnection from "./config";
+import { Resource } from "./entities/resource.entity";
+import { Metadata } from "./entities/metadata.entity";
+import dbConnection from "./config/config";
 import express from "express";
 import ResourceService from "./resource.route";
 import LectureDataSource from "./config";
@@ -36,6 +37,8 @@ resources
     //     { type: "Timber", name: "Saw" },
     // ])
     // .execute()
+
+    res.send("Add a book");
   });
 
 export default resources;

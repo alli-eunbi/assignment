@@ -17,6 +17,7 @@ services:
     volumes:
       - ./mysql/:/docker-entrypoint-initdb.d/
     restart: unless-stopped
+
     environment:
       MYSQL_ROOT_PASSWORD: 1234
       MYSQL_DATABASE: lecture
